@@ -23,18 +23,26 @@ public class Chatbot
 		this.movieList = new ArrayList<Movie>();
 		this.shoppingList = new ArrayList<String>();
 		this.cuteAnimalMemes = new ArrayList<String>();
-		this.questions = new String[2];
+		this.questions = new String[10];
 		this.username = username;
 		this.content = "";
 		this.intro = "";
 		this.currentTime = null;
-		this.topics = new String [7];
+		this.topics = new String [3];
 		this.verbs = new String [4];
 		this.followUps = new String [5];
 		
 		buildVerbs();
 		buildShoppingList();
 		buildQuestions();
+		buildTopics();
+	}
+	
+	private void buildTopics()
+	{
+		topics[0] = "Video Games.";
+		topics[1] = "Math";
+		topics[2] = "Animals";
 	}
 	
 	private void buildVerbs()
@@ -69,6 +77,15 @@ public class Chatbot
 	{
 		questions[0] = "What is your name?";
 		questions[1] = "How old are you?";
+		questions[2] = "What do you like to do?";
+		questions[3] = "What is your favorite food?";
+		questions[4] = "What is your favorit sport?";
+		questions[5] = "What is your favorite movie?";
+		questions[6] = "What is your favorite video game?";
+		questions[7] = "Do you like apple, android, or neither?";
+		questions[8] = "Where is your favorite place to visit?";
+		questions[9] = "What is your job?";
+				
 	}
 	
 	public String processConversation(String input)
@@ -149,12 +166,37 @@ public class Chatbot
 
 	public boolean quitChecker(String exitString)
 	{
+		if(exitString == null)
+		{
+			return false;
+		}
+
+		if(exitString.equalsIgnoreCase("quit"))
+		{
+			return true;
+		}
+		
 		return false;
 	}
 
 	public boolean keyboardMashChecker(String sample)
 	{
+		String  mash = "qwertyuiop[]asdfghjkl;'zxcvbnm,./.,mnbvcxz';lkjhgfdsa][poiuytrewq";
+		
+		for(int index = 0; index < mash.length()-2; index++)
+		{
+			if(mash.substring(index, index + 3).equalsIgnoreCase(sample))
+			{
+				return true;
+			}
+		}
+		
 		return false;
+	}
+
+	public String toString()
+	{
+		return "";
 	}
 	
 	public List<Movie> getMovieList()
@@ -174,7 +216,7 @@ public class Chatbot
 
 	public String [] getQuestions()
 	{
-		return null;
+		return questions;
 	}
 	
 	public String[] getVerbs()
