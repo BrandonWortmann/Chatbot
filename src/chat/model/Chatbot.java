@@ -23,17 +23,18 @@ public class Chatbot
 		this.movieList = new ArrayList<Movie>();
 		this.shoppingList = new ArrayList<String>();
 		this.cuteAnimalMemes = new ArrayList<String>();
-		this.questions = new String[10];
+		this.questions = new String[2];
 		this.username = username;
 		this.content = "";
 		this.intro = "";
 		this.currentTime = null;
-		this.topics = new String [0];
+		this.topics = new String [7];
 		this.verbs = new String [4];
-		this.followUps = new String [0];
+		this.followUps = new String [5];
 		
 		buildVerbs();
 		buildShoppingList();
+		buildQuestions();
 	}
 	
 	private void buildVerbs()
@@ -66,12 +67,36 @@ public class Chatbot
 	
 	private void buildQuestions()
 	{
-		
+		questions[0] = "What is your name?";
+		questions[1] = "How old are you?";
 	}
 	
 	public String processConversation(String input)
 	{
-		return null;
+		String chatbotResponse = "";
+		chatbotResponse += "You said:" + "\n"+ input + "\n";
+		
+		chatbotResponse += buildChatbotResponse();
+		
+		return chatbotResponse;
+	}
+	
+	private String buildChatbotResponse()
+	{
+		String response = "I ";
+		int random = (int)(Math.random() * verbs.length);
+		
+		response += verbs[random];
+		
+		random = (int)(Math.random()* topics.length);
+		response += " " + topics[random] + ".\n";
+		
+		random = (int)(Math.random() * questions.length);
+		response += questions[random];
+		
+		
+		
+		return response;
 	}
 	
 	public boolean lengthChecker(String input)
