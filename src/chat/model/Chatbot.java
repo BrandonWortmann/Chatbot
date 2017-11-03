@@ -37,14 +37,14 @@ public class Chatbot
 		buildQuestions();
 		buildTopics();
 	}
-	
+	// Creates the topics the chatbot talks about
 	private void buildTopics()
 	{
 		topics[0] = "Video Games.";
 		topics[1] = "Math";
 		topics[2] = "Animals";
 	}
-	
+	// Creates the topics the chatbot talks about
 	private void buildVerbs()
 	{
 		verbs[0] = "like";
@@ -57,7 +57,7 @@ public class Chatbot
 	{
 		
 	}
-	
+	// Creates the List of item to buy
 	private void buildShoppingList()
 	{
 		shoppingList.add("snacks");
@@ -89,7 +89,7 @@ public class Chatbot
 		questions[9] = "What is your job?";
 				
 	}
-	
+	// The output for the chatbot
 	public String processConversation(String input)
 	{
 		String chatbotResponse = "";
@@ -99,7 +99,7 @@ public class Chatbot
 		
 		return chatbotResponse;
 	}
-	
+	// Builds the output
 	private String buildChatbotResponse()
 	{
 		String response = "I ";
@@ -117,7 +117,7 @@ public class Chatbot
 		
 		return response;
 	}
-	
+	// Makes sure the input length if valid
 	public boolean lengthChecker(String input)
 	{
 		boolean pass = false;
@@ -150,7 +150,7 @@ public class Chatbot
 	{
 		return false;
 	}
-	
+	// Sees if they want something on the shopping list
 	public boolean shoppingListChecker(String shoppingItem)
 	{
 		boolean pass = false;
@@ -177,7 +177,7 @@ public class Chatbot
 	{
 		return false;
 	}
-
+	// Checks if they want to end
 	public boolean quitChecker(String exitString)
 	{
 		if(exitString == null)
@@ -192,7 +192,7 @@ public class Chatbot
 		
 		return false;
 	}
-
+	// Checks to see if they mashed he keyboard
 	public boolean keyboardMashChecker(String sample)
 	{
 		String[] mash = new String[9];
