@@ -65,6 +65,8 @@ public class Chatbot
 		shoppingList.add("pizza");
 		shoppingList.add("soda");
 		shoppingList.add("ice cream");
+		shoppingList.add("protein");
+		shoppingList.add("veggies");
 		
 	}
 	
@@ -151,7 +153,19 @@ public class Chatbot
 	
 	public boolean shoppingListChecker(String shoppingItem)
 	{
-		return false;
+		boolean pass = false;
+		
+		for(int i = 0; i<shoppingList.size(); i++)
+		{
+			if (shoppingItem.contains(shoppingList.get(i)))
+			{
+				pass = true;
+			}
+		}
+		
+		return pass;
+		
+		
 	}
 	
 	public boolean movieTitleChecker(String title)
@@ -181,16 +195,27 @@ public class Chatbot
 
 	public boolean keyboardMashChecker(String sample)
 	{
-		String  mash = "qwertyuiop[]asdfghjkl;'zxcvbnm,./.,mnbvcxz';lkjhgfdsa][poiuytrewq";
+		String[] mash = new String[9];
 		
-		for(int index = 0; index < mash.length()-2; index++)
+		mash[0] = "sdf";
+		mash[1] = "SDF";
+		mash[2] = "dfg";
+		mash[3] = "cvb";
+		mash[4] = ",./";
+		mash[5] = "kjh";
+		mash[6] = "DFG";
+		mash[7] = "CVB";
+		mash[8] = "KJH";
+		
+		for(String letters: mash)
 		{
-			if(mash.substring(index, index + 3).equalsIgnoreCase(sample))
+			if(sample.contains(letters))
 			{
 				return true;
 			}
 		}
 		
+			
 		return false;
 	}
 
