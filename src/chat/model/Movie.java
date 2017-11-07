@@ -16,7 +16,7 @@ public class Movie
 	{
 		this.title = title;
 		this.genre = "";
-		this.ratingMPAA = "";   
+		this.ratingMPAA = ""; ;
 		this.review = "";
 		this.length = 0;
 		this.releaseDate = null;
