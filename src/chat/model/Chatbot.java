@@ -60,6 +60,8 @@ public class Chatbot
 		movieList.add(new Movie("Zombie Land"));
 		movieList.add(new Movie("The Advengers"));
 		movieList.add(new Movie("Jigsaw"));
+		movieList.add(new Movie("Spiderman"));
+		movieList.add(new Movie("Hidden Figures"));
 		
 		
 	}
@@ -222,7 +224,12 @@ public class Chatbot
 	
 	public boolean movieTitleChecker(String title)
 	{
-		return false;
+		if(title.length() < 1)
+		{
+			return false;
+		}
+		
+		return true;
 	}
 	
 	public boolean movieGenreChecker(String genre)
