@@ -25,7 +25,7 @@ public class Chatbot
 		this.cuteAnimalMemes = new ArrayList<String>();
 		this.questions = new String[10];
 		this.username = username;
-		this.content = "";
+		this.content = "content";
 		this.intro = "";
 		this.currentTime = null;
 		this.topics = new String [3];
@@ -138,11 +138,42 @@ public class Chatbot
 	
 	public boolean userNameChecker(String input)
 	{
+		if(input == null)
+		{
+			return false;
+		}
+		if(input.length() == 0)
+		{
+			return false;
+		}
+		
+		
+		if(input.charAt(0) == '@' && !input.substring(1,input.length()).contains("@") )
+		{
+			return true;
+		}
+		
+		if(input.contains("@"))
+		{
+			return false;
+		}
+		
 		return false;
 	}
 	
 	public boolean contentChecker(String contentCheck)
 	{
+		if(contentCheck.length() > 5)
+		{
+			return true;
+		}
+		
+		if(contentCheck.contains(content))
+		{
+			return true;
+		}
+		
+		
 		return false;
 	}
 	
