@@ -36,6 +36,8 @@ public class Chatbot
 		buildShoppingList();
 		buildQuestions();
 		buildTopics();
+		buildCuteAnimals();
+		buildMovieList();
 	}
 	// Creates the topics the chatbot talks about
 	private void buildTopics()
@@ -55,6 +57,10 @@ public class Chatbot
 
 	private void buildMovieList()
 	{
+		movieList.add(new Movie("Zombie Land"));
+		movieList.add(new Movie("The Advengers"));
+		movieList.add(new Movie("Jigsaw"));
+		
 		
 	}
 	// Creates the List of item to buy
@@ -72,7 +78,10 @@ public class Chatbot
 	
 	private void buildCuteAnimals()
 	{
-		
+		cuteAnimalMemes.add("pupper");
+		cuteAnimalMemes.add("otter");
+		cuteAnimalMemes.add("kittie");
+		cuteAnimalMemes.add("FLOOFER");
 	}
 	
 	private void buildQuestions()
@@ -113,6 +122,14 @@ public class Chatbot
 		random = (int)(Math.random() * questions.length);
 		response += questions[random];
 		
+		random = (int)(Math.random() * 2);
+		
+		if(random % 2==0)
+		{
+			random = (int) (Math.random() * movieList.size());
+			response += "\n" + movieList.get(random).getTitle() + " is a great Movie!";
+		}
+		
 		
 		
 		return response;
@@ -142,7 +159,7 @@ public class Chatbot
 		{
 			return false;
 		}
-		if(input.length() == 0)
+		if(input.length() < 2)
 		{
 			return false;
 		}
@@ -153,10 +170,6 @@ public class Chatbot
 			return true;
 		}
 		
-		if(input.contains("@"))
-		{
-			return false;
-		}
 		
 		return false;
 	}
@@ -179,6 +192,14 @@ public class Chatbot
 	
 	public boolean cuteAnimalMemeChecker(String input)
 	{
+		for(int i=0; i<cuteAnimalMemes.size(); i++)
+		{
+			if(input.contains(cuteAnimalMemes.get(i)))
+			{
+				return true;
+			}
+		}
+		
 		return false;
 	}
 	// Sees if they want something on the shopping list
