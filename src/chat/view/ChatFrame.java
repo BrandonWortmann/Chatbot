@@ -28,7 +28,7 @@ public class ChatFrame extends JFrame
 		
 	}
 	
-	public ChatbotController getBaseController()
+	public ChatbotController getAppController()
 	{
 		return appController;
 	}
