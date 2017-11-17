@@ -39,6 +39,7 @@ public class Chatbot
 		buildCuteAnimals();
 		buildMovieList();
 	}
+	
 	/**
 	 *  Creates the topics the chatbot talks about
 	 */
@@ -48,6 +49,7 @@ public class Chatbot
 		topics[1] = "Math";
 		topics[2] = "Animals";
 	}
+	
 	/**
 	 * Creates the topics the chatbot talks about
 	 */
@@ -58,6 +60,7 @@ public class Chatbot
 		verbs[2] = "am ambivalet about";
 		verbs[3] = "am thinking about";
 	}
+	
 	/**
 	 * Adds the movie to the movie list
 	 */
@@ -71,6 +74,7 @@ public class Chatbot
 		
 		
 	}
+	
 	/**
 	 *  Creates the List of item to buy
 	 */
@@ -85,6 +89,7 @@ public class Chatbot
 		shoppingList.add("veggies");
 		
 	}
+	
 	/**
 	 * adds animals to the cute Animals
 	 */
@@ -95,6 +100,7 @@ public class Chatbot
 		cuteAnimalMemes.add("kittie");
 		cuteAnimalMemes.add("FLOOFER");
 	}
+
 	/**
 	 * Questions the chatbot asks
 	 */
@@ -112,6 +118,7 @@ public class Chatbot
 		questions[9] = "What is your job?";
 				
 	}
+	
 	/**
 	 *  The output for the chatbot
 	 * @param input
@@ -126,6 +133,7 @@ public class Chatbot
 		
 		return chatbotResponse;
 	}
+	
 	/**
 	 *  Builds the output
 	 * @return String
@@ -141,20 +149,21 @@ public class Chatbot
 		response += " " + topics[random] + ".\n";
 		
 		random = (int)(Math.random() * questions.length);
-		response += questions[random];
+		response += questions[random] + "\n";
 		
 		random = (int)(Math.random() * 2);
 		
 		if(random % 2==0)
 		{
 			random = (int) (Math.random() * movieList.size());
-			response += "\n" + movieList.get(random).getTitle() + " is a great Movie!";
+			response +=  movieList.get(random).getTitle() + " is a great Movie!\n";
 		}
 		
 		
 		
 		return response;
 	}
+
 	/**
 	 *  Makes sure the input length if valid
 	 * @param input
@@ -288,12 +297,14 @@ public class Chatbot
 	{
 		return false;
 	}
+	
 	/**
 	 *  Checks if they want to end
 	 * @param exitString
 	 * @return
 	 */
 	public boolean quitChecker(String exitString)
+
 	{
 		if(exitString == null)
 		{
@@ -307,6 +318,7 @@ public class Chatbot
 		
 		return false;
 	}
+	
 	/**
 	 *  Checks to see if they mashed he keyboard
 	 * @param sample
@@ -338,71 +350,126 @@ public class Chatbot
 		return false;
 	}
 
+	/**
+	 * 
+	 */
 	public String toString()
 	{
 		return "";
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public List<Movie> getMovieList()
 	{
 		return movieList;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public List<String> getShoppingList()
 	{
 		return shoppingList;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public List<String> getCuteAnimalMemes()
 	{
 		return cuteAnimalMemes;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String [] getQuestions()
 	{
 		return questions;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public String[] getVerbs()
 	{
 		return verbs;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String[] getTopics()
 	{
 		return topics;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String[] getFollowUps()
 	{
 		return followUps;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String getUsername()
 	{
 		return username;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public String getContent()
 	{
 		return content;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String getIntro()
 	{
 		return null;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public LocalTime getCurrentTime()
 	{
 		return null;
 	}
 	
+	/**
+	 * 
+	 * @param username
+	 */
 	public void setUsername(String username)
 	{
 		this.username = username;
 	}
 	
+	/**
+	 * 
+	 * @param content
+	 */
 	public void setContent(String content)
 	{
 		this.content = content;
