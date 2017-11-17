@@ -9,7 +9,11 @@ import javax.swing.SpringLayout;
 import java.awt.Color;
 
 
-
+/**
+ * sets up the JPanel
+ * @author Brandon Wortmann
+ *
+ */
 public class ChatPanel extends JPanel
 {
 	private ChatbotController appController;
@@ -37,11 +41,14 @@ public class ChatPanel extends JPanel
 		
 		setupPanel();
 		setupLayout();
-		setupLiseners();
+		setupListeners();
 		
 		
 	}
 
+	/**
+	 * adds everything to the Panel
+	 */
 	private void setupPanel()
 	{
 		this.setBackground(Color.BLUE);
@@ -54,6 +61,9 @@ public class ChatPanel extends JPanel
 		
 	}
 
+	/**
+	 * Sets the layout for all of the panel components
+	 */
 	private void setupLayout()
 	{
 		appLayout.putConstraint(SpringLayout.WEST, chatArea, 25, SpringLayout.WEST, this);
@@ -68,7 +78,10 @@ public class ChatPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.SOUTH, chatArea, -64, SpringLayout.SOUTH, this);
 	}
 	
-	private void setupLiseners()
+	/**
+	 * The listeners for the buttons and text field
+	 */
+	private void setupListeners()
 	{
 		
 	}

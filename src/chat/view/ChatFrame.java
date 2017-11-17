@@ -2,7 +2,11 @@ package chat.view;
 
 import chat.controller.ChatbotController;
 import javax.swing.JFrame;
-
+/**
+ * sets up the Jframe for the project
+ * @author brandon Wortman
+ *
+ */
 public class ChatFrame extends JFrame
 {
 	private ChatbotController appController;
@@ -16,6 +20,9 @@ public class ChatFrame extends JFrame
 		setupFrame();
 	}
 	
+	/** 
+	 * sets up the frame
+	 */
 	private void setupFrame()
 	{
 		this.setContentPane(appPane);

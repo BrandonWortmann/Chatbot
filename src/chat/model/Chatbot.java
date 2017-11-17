@@ -39,14 +39,18 @@ public class Chatbot
 		buildCuteAnimals();
 		buildMovieList();
 	}
-	// Creates the topics the chatbot talks about
+	/**
+	 *  Creates the topics the chatbot talks about
+	 */
 	private void buildTopics()
 	{
 		topics[0] = "Video Games.";
 		topics[1] = "Math";
 		topics[2] = "Animals";
 	}
-	// Creates the topics the chatbot talks about
+	/**
+	 * Creates the topics the chatbot talks about
+	 */
 	private void buildVerbs()
 	{
 		verbs[0] = "like";
@@ -54,7 +58,9 @@ public class Chatbot
 		verbs[2] = "am ambivalet about";
 		verbs[3] = "am thinking about";
 	}
-
+	/**
+	 * Adds the movie to the movie list
+	 */
 	private void buildMovieList()
 	{
 		movieList.add(new Movie("Zombie Land"));
@@ -65,7 +71,9 @@ public class Chatbot
 		
 		
 	}
-	// Creates the List of item to buy
+	/**
+	 *  Creates the List of item to buy
+	 */
 	private void buildShoppingList()
 	{
 		shoppingList.add("snacks");
@@ -77,7 +85,9 @@ public class Chatbot
 		shoppingList.add("veggies");
 		
 	}
-	
+	/**
+	 * adds animals to the cute Animals
+	 */
 	private void buildCuteAnimals()
 	{
 		cuteAnimalMemes.add("pupper");
@@ -85,7 +95,9 @@ public class Chatbot
 		cuteAnimalMemes.add("kittie");
 		cuteAnimalMemes.add("FLOOFER");
 	}
-	
+	/**
+	 * Questions the chatbot asks
+	 */
 	private void buildQuestions()
 	{
 		questions[0] = "What is your name?";
@@ -100,7 +112,11 @@ public class Chatbot
 		questions[9] = "What is your job?";
 				
 	}
-	// The output for the chatbot
+	/**
+	 *  The output for the chatbot
+	 * @param input
+	 * @return String
+	 */
 	public String processConversation(String input)
 	{
 		String chatbotResponse = "";
@@ -110,7 +126,10 @@ public class Chatbot
 		
 		return chatbotResponse;
 	}
-	// Builds the output
+	/**
+	 *  Builds the output
+	 * @return String
+	 */
 	private String buildChatbotResponse()
 	{
 		String response = "I ";
@@ -136,7 +155,11 @@ public class Chatbot
 		
 		return response;
 	}
-	// Makes sure the input length if valid
+	/**
+	 *  Makes sure the input length if valid
+	 * @param input
+	 * @return boolean
+	 */
 	public boolean lengthChecker(String input)
 	{
 		boolean pass = false;
@@ -155,6 +178,11 @@ public class Chatbot
 		return false;
 	}
 	
+	/**
+	 * Makes sure the user name has correct format
+	 * @param input
+	 * @return boolean
+	 */
 	public boolean userNameChecker(String input)
 	{
 		if(input == null)
@@ -176,6 +204,11 @@ public class Chatbot
 		return false;
 	}
 	
+	/** 
+	 * detects what they are talking about
+	 * @param contentCheck
+	 * @return boolean
+	 */
 	public boolean contentChecker(String contentCheck)
 	{
 		if(contentCheck.length() > 5)
@@ -192,6 +225,11 @@ public class Chatbot
 		return false;
 	}
 	
+	/**
+	 * Checks their input for animals
+	 * @param input
+	 * @return boolean
+	 */
 	public boolean cuteAnimalMemeChecker(String input)
 	{
 		for(int i=0; i<cuteAnimalMemes.size(); i++)
@@ -204,7 +242,11 @@ public class Chatbot
 		
 		return false;
 	}
-	// Sees if they want something on the shopping list
+	/**
+	 *  Sees if they want something on the shopping list
+	 * @param shoppingItem
+	 * @return boolean
+	 */
 	public boolean shoppingListChecker(String shoppingItem)
 	{
 		boolean pass = false;
@@ -222,6 +264,11 @@ public class Chatbot
 		
 	}
 	
+	/**
+	 * 
+	 * @param title
+	 * @return
+	 */
 	public boolean movieTitleChecker(String title)
 	{
 		if(title.length() < 1)
@@ -232,11 +279,20 @@ public class Chatbot
 		return true;
 	}
 	
+	/**
+	 * checks the movie genre
+	 * @param genre
+	 * @return
+	 */
 	public boolean movieGenreChecker(String genre)
 	{
 		return false;
 	}
-	// Checks if they want to end
+	/**
+	 *  Checks if they want to end
+	 * @param exitString
+	 * @return
+	 */
 	public boolean quitChecker(String exitString)
 	{
 		if(exitString == null)
@@ -251,7 +307,11 @@ public class Chatbot
 		
 		return false;
 	}
-	// Checks to see if they mashed he keyboard
+	/**
+	 *  Checks to see if they mashed he keyboard
+	 * @param sample
+	 * @return
+	 */
 	public boolean keyboardMashChecker(String sample)
 	{
 		String[] mash = new String[9];

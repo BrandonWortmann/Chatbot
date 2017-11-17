@@ -4,6 +4,11 @@ import chat.model.Chatbot;
 import chat.view.PopupDisplay;
 import chat.view.ChatFrame;
 
+/**
+ * This is the controller of the program.  It tells it what to do.
+ * @author brandon Wortmann
+ *
+ */
 public class ChatbotController
 {
 	
