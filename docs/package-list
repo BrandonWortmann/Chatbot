@@ -1,1 +1,4 @@
 chat.controller
+chat.model
+chat.tests
+chat.view
