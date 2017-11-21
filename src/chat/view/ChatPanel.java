@@ -11,9 +11,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JToggleButton;
 
-
 /**
  * sets up the JPanel
+ * 
  * @author Brandon Wortmann
  *
  */
@@ -25,30 +25,22 @@ public class ChatPanel extends JPanel
 	private JTextArea chatArea;
 	private SpringLayout appLayout;
 	private JButton checkerButton;
-	
+
 	public ChatPanel(ChatbotController appController)
 	{
 		super();
 		this.appController = appController;
-		
+
 		checkerButton = new JButton("Test");
-		chatButton= new JButton("chat");
-		chatArea = new JTextArea(10,25);
+		chatButton = new JButton("chat");
+		chatArea = new JTextArea(10, 25);
 		inputField = new JTextField(20);
 		appLayout = new SpringLayout();
-		
-		
-		
-		
-		
-		
-		
-		
+
 		setupPanel();
 		setupLayout();
 		setupListeners();
-		
-		
+
 	}
 
 	/**
@@ -64,7 +56,7 @@ public class ChatPanel extends JPanel
 		this.add(checkerButton);
 		chatArea.setEnabled(false);
 		chatArea.setEditable(false);
-		
+
 	}
 
 	/**
@@ -88,49 +80,49 @@ public class ChatPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.SOUTH, chatArea, -100, SpringLayout.SOUTH, this);
 		appLayout.putConstraint(SpringLayout.WEST, inputField, 0, SpringLayout.WEST, chatArea);
 	}
-	
+
 	/**
 	 * The listeners for the buttons and text field
 	 */
 	private void setupListeners()
 	{
-		
-		
-		  inputField.addActionListener(new ActionListener() 
-	        {
-	            public void actionPerformed(ActionEvent enter)
-	            {
-	            		String userText = inputField.getText();
-					String displayText = appController.interactWithChatbot(userText);
-					chatArea.append(displayText);
-					inputField.setText("");
-	            	
-	            }
-	        });
-		  
-		  chatButton.addActionListener(new ActionListener() 
-	        {
-	            public void actionPerformed(ActionEvent enter)
-	            {
-	            		String userText = inputField.getText();
-					String displayText = appController.interactWithChatbot(userText);
-					chatArea.append(displayText);
-					inputField.setText("");
-	            	
-	            }
-	        });
-		  
-		  checkerButton.addActionListener(new ActionListener() 
-	        {
-	            public void actionPerformed(ActionEvent enter)
-	            {
-	            		
-	            }
-	        });
+
+		inputField.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent enter)
+			{
+				String userText = inputField.getText();
+				String displayText = appController.interactWithChatbot(userText);
+				chatArea.append(displayText);
+				inputField.setText("");
+
+			}
+		});
+
+		chatButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent enter)
+			{
+				String userText = inputField.getText();
+				String displayText = appController.interactWithChatbot(userText);
+				chatArea.append(displayText);
+				inputField.setText("");
+
+			}
+		});
+
+		checkerButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				String  userText = inputField.getText();
+				String displayText = appController.useCheckers(userText);
+				chatArea.append(displayText);
+				inputField.setText("");
+
+			}
+		});
 
 	}
-	
-	
-	
-	
+
 }

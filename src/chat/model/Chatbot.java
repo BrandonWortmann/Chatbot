@@ -99,7 +99,7 @@ public class Chatbot
 	}
 	
 	/**
-	 * adds animals to the cute Animals
+	 * adds animals to the cute Animals list
 	 */
 	private void buildCuteAnimals()
 	{
@@ -110,7 +110,7 @@ public class Chatbot
 	}
 
 	/**
-	 * Questions the chatbot asks
+	 * A list of questions the chatbot asks
 	 */
 	private void buildQuestions()
 	{
@@ -259,6 +259,7 @@ public class Chatbot
 		
 		return false;
 	}
+	
 	/**
 	 *  Sees if they want something on the shopping list
 	 * @param shoppingItem
@@ -282,7 +283,7 @@ public class Chatbot
 	}
 	
 	/**
-	 * 
+	 * Checks if they mention a movie in their text
 	 * @param title
 	 * @return
 	 */
@@ -299,7 +300,7 @@ public class Chatbot
 	}
 	
 	/**
-	 * checks the movie genre
+	 * Checks if they mention a genre in their text
 	 * @param genre
 	 * @return
 	 */
