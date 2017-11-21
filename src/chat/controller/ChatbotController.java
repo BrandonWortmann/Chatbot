@@ -6,8 +6,8 @@ import chat.view.ChatFrame;
 
 /**
  * This is the controller of the program.  It tells it what to do.
- * @author brandon Wortmann
- *
+ * @author Brandon Wortmann
+ * @version 21.11.17 Added Frame 1.3
  */
 public class ChatbotController
 {
