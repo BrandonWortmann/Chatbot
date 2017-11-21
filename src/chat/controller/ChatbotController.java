@@ -30,15 +30,6 @@ public class ChatbotController
 		
 	}
 	
-	private String popupChat(String chat)
-	{
-		String chatbotSays = "";
-		
-		chatbotSays += chatbot.processConversation(chat);
-		
-		return chatbotSays;
-		
-	}
 	public String interactWithChatbot(String input)
 	{
 		String chatbotSays = "";

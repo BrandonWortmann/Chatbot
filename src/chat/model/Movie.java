@@ -15,12 +15,18 @@ public class Movie
 	public Movie(String title)
 	{
 		this.title = title;
-		this.genre = "";
+		this.genre = "generic";
 		this.ratingMPAA = ""; ;
 		this.review = "";
-		this.length = 0;
+		this.length = 5;
 		this.releaseDate = null;
 		this.starScore = 0.0;
+	}
+	
+	public Movie(String title, String genre)
+	{
+		this.title = title;
+		this.genre = genre;
 	}
 
 	public String getTitle()
@@ -95,6 +101,6 @@ public class Movie
 	
 	public String toString()
 	{
-		return null;
+		return "";
 	}
 }

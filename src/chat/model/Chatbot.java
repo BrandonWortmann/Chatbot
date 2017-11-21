@@ -27,7 +27,7 @@ public class Chatbot
 		this.username = username;
 		this.content = "content";
 		this.intro = "";
-		this.currentTime = null;
+		this.currentTime = LocalTime.now();
 		this.topics = new String [3];
 		this.verbs = new String [4];
 		this.followUps = new String [5];
@@ -39,6 +39,7 @@ public class Chatbot
 		buildCuteAnimals();
 		buildMovieList();
 	}
+	
 	
 	/**
 	 *  Creates the topics the chatbot talks about
@@ -66,11 +67,13 @@ public class Chatbot
 	 */
 	private void buildMovieList()
 	{
-		movieList.add(new Movie("Zombie Land"));
-		movieList.add(new Movie("The Advengers"));
-		movieList.add(new Movie("Jigsaw"));
-		movieList.add(new Movie("Spiderman"));
-		movieList.add(new Movie("Hidden Figures"));
+		movieList.add(new Movie("Zombie Land", "Comedy"));
+		movieList.add(new Movie("The Avengers", "Action"));
+		movieList.add(new Movie("Jigsaw", "Thriller"));
+		movieList.add(new Movie("Spiderman", "Spiderman"));
+		movieList.add(new Movie("Hidden Figures", "Drama"));
+		movieList.add(new Movie("Life", "Horror"));
+		movieList.add(new Movie("Born in China", "Documentary"));
 		
 		
 	}
@@ -81,12 +84,17 @@ public class Chatbot
 	private void buildShoppingList()
 	{
 		shoppingList.add("snacks");
-		shoppingList.add("Steak");
+		shoppingList.add("steak");
 		shoppingList.add("pizza");
 		shoppingList.add("soda");
 		shoppingList.add("ice cream");
 		shoppingList.add("protein");
 		shoppingList.add("veggies");
+		shoppingList.add("chips");
+		shoppingList.add("queso");
+		shoppingList.add("salsa");
+		shoppingList.add("milk");
+		shoppingList.add("bread");
 		
 	}
 	
@@ -280,12 +288,14 @@ public class Chatbot
 	 */
 	public boolean movieTitleChecker(String title)
 	{
-		if(title.length() < 1)
+		for(Movie movieTitle: movieList)
 		{
-			return false;
+			if(title.toLowerCase().contains(movieTitle.getTitle().toLowerCase()))
+			{
+				return true;
+			}
 		}
-		
-		return true;
+		return false;
 	}
 	
 	/**
@@ -295,7 +305,15 @@ public class Chatbot
 	 */
 	public boolean movieGenreChecker(String genre)
 	{
+		for(Movie movieGenre: movieList)
+		{
+			if(genre.toLowerCase().contains(movieGenre.getGenre().toLowerCase()))
+			{
+				return true;
+			}
+		}
 		return false;
+		
 	}
 	
 	/**
@@ -445,7 +463,7 @@ public class Chatbot
 	 */
 	public String getIntro()
 	{
-		return null;
+		return intro;
 	}
 	
 	/**
@@ -454,7 +472,7 @@ public class Chatbot
 	 */
 	public LocalTime getCurrentTime()
 	{
-		return null;
+		return currentTime;
 	}
 	
 	/**
