@@ -210,6 +210,22 @@ public class Chatbot
 	
 	public boolean htmlTagChecker(String input)
 	{
+		if(!input.contains("<") || !input.contains(">"))
+		{
+			return false;
+		}
+		if(input.length()<2)
+		{
+			return false;
+		}
+		if(input.toLowerCase().contains("<p>") || input.toLowerCase().contains("<br"))
+		{
+			return true;
+		}
+		
+		
+		
+		
 		return false;
 	}
 	
