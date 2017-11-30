@@ -1,3 +1,4 @@
+
 package chat.model;
 
 import java.util.List;
@@ -210,11 +211,18 @@ public class Chatbot
 	
 	public boolean htmlTagChecker(String input)
 	{
+		int firstOpen = input.indexOf("<");
+		int firstClose = input.indexOf(">");
+		int secondOpen = input.indexOf("<", firstOpen);
+		int secondClose = input.indexOf(">", firstClose);
+		
+		
+		
 		if(!input.contains("<") || !input.contains(">"))
 		{
 			return false;
 		}
-		if(input.length()<2)
+		if(input.equals("<>") || input.equals("< >"))
 		{
 			return false;
 		}
@@ -222,11 +230,26 @@ public class Chatbot
 		{
 			return true;
 		}
+		if(secondOpen == -1 || secondClose == -1 || firstOpen == -1|| firstClose == -1)
+		{
+			return false;
+		}
+		if(!input.contains("/"))
+		{
+			return false;
+		}
+		if(input.substring(firstOpen + 1, firstClose).equalsIgnoreCase(input.substring(secondOpen + 2 , secondClose)))
+		{
+			return true;
+		}
+		if(input.toLowerCase().contains("a href") && !input.toLowerCase().contains("="))
+		{
+			return false;
+		}
 		
 		
 		
-		
-		return false;
+		return true;
 	}
 	
 	/**
