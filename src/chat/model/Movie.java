@@ -14,19 +14,50 @@ public class Movie
 	
 	public Movie(String title)
 	{
-		this.title = title;
+		if(title.length()<4)
+		{
+			this.title = "Movie";
+		}
+		else
+		{
+			this.title = title;
+		}
+		
 		this.genre = "generic";
-		this.ratingMPAA = ""; ;
-		this.review = "";
-		this.length = 5;
-		this.releaseDate = null;
+		this.ratingMPAA = "G"; ;
+		this.review = "It was a great movie";
+		this.length = 11;
+		this.releaseDate = LocalDate.now();
 		this.starScore = 0.0;
 	}
 	
 	public Movie(String title, String genre)
 	{
-		this.title = title;
+		if(title.length()<4)
+		{
+			this.title = "Movie";
+		}
+		else
+		{
+			this.title = title;
+		}
+		
+		if(genre.length()<5)
+		{
+			this.genre = "Genre";
+		}
+		else
+		{
+			this.genre = genre;
+		}
+		
+		
 		this.genre = genre;
+		this.ratingMPAA = ""; ;
+		this.review = "";
+		this.length = 5;
+		this.releaseDate = LocalDate.now();
+		this.starScore = 0.0;
 	}
 
 	public String getTitle()

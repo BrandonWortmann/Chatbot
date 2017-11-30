@@ -27,6 +27,7 @@ public class ChatPanel extends JPanel
 	private SpringLayout appLayout;
 	private JButton checkerButton;
 	private JLabel infoLabel;
+	private JLabel titleLabel;
 
 	public ChatPanel(ChatbotController appController)
 	{
@@ -38,6 +39,7 @@ public class ChatPanel extends JPanel
 		chatArea = new JTextArea(10, 25);
 		inputField = new JTextField(20);
 		infoLabel = new JLabel("Type to chat with the chatbot");
+		titleLabel = new JLabel("Welcome to Chatbot");
 		appLayout = new SpringLayout();
 		
 
@@ -59,6 +61,7 @@ public class ChatPanel extends JPanel
 		this.add(chatArea);
 		this.add(checkerButton);
 		this.add(infoLabel);
+		this.add(titleLabel);
 		
 		chatArea.setEnabled(false);
 		chatArea.setEditable(false);
