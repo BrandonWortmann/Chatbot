@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JToggleButton;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.JScrollPane;
 
 /**
  * sets up the JPanel
@@ -29,6 +30,7 @@ public class ChatPanel extends JPanel
 	private JButton checkerButton;
 	private JLabel infoLabel;
 	private JLabel titleLabel;
+	private JScrollPane chatScrollPane;
 
 	public ChatPanel(ChatbotController appController)
 	{
