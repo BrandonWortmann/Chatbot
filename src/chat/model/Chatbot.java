@@ -5,6 +5,11 @@ import java.util.List;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
+/**
+ * this is the chatbot object it holds all of the information that has to do with chatbot
+ * @author Brandon Wortmann
+ *
+ */
 public class Chatbot
 {
 	private List<Movie> movieList;
@@ -19,6 +24,10 @@ public class Chatbot
 	private String intro;
 	private LocalTime currentTime;
 	
+	/**
+	 * this is the constructor for the chatbot
+	 * @param username
+	 */
 	public Chatbot(String username)
 	{
 		this.movieList = new ArrayList<Movie>();
@@ -136,6 +145,17 @@ public class Chatbot
 	public String processConversation(String input)
 	{
 		String chatbotResponse = "";
+		currentTime = LocalTime.now();
+		
+		if(currentTime.getMinute() < 10)
+		{
+			chatbotResponse += currentTime.getHour() + ":0" + currentTime.getMinute() + " ";
+		}
+		else
+		{
+			chatbotResponse += currentTime.getHour() + ":" + currentTime.getMinute() + " ";
+		}
+		
 		chatbotResponse += "You said:" + "\n"+ input + "\n";
 		
 		chatbotResponse += buildChatbotResponse();
@@ -208,7 +228,11 @@ public class Chatbot
 		
 		return pass;
 	}
-	
+	/**
+	 * Checks to make sure it is a valid html tag
+	 * @param input
+	 * @return boolean
+	 */
 	public boolean htmlTagChecker(String input)
 	{
 		int firstOpen = input.indexOf("<");
@@ -427,7 +451,7 @@ public class Chatbot
 	}
 
 	/**
-	 * 
+	 * Creates the toString for the chatbot
 	 */
 	public String toString()
 	{
@@ -435,7 +459,7 @@ public class Chatbot
 	}
 	
 	/**
-	 * 
+	 * a getter for the movies
 	 * @return
 	 */
 	public List<Movie> getMovieList()
@@ -444,7 +468,7 @@ public class Chatbot
 	}
 	
 	/**
-	 * 
+	 * a getter for the shopping list
 	 * @return
 	 */
 	public List<String> getShoppingList()
@@ -453,7 +477,7 @@ public class Chatbot
 	}
 	
 	/**
-	 * 
+	 * a getter for the animal memes
 	 * @return
 	 */
 	public List<String> getCuteAnimalMemes()
@@ -462,7 +486,7 @@ public class Chatbot
 	}
 
 	/**
-	 * 
+	 * a getter for the questions
 	 * @return
 	 */
 	public String [] getQuestions()
@@ -471,7 +495,7 @@ public class Chatbot
 	}
 	
 	/**
-	 * 
+	 * a getter for the questions
 	 * @return
 	 */
 	public String[] getVerbs()
@@ -480,7 +504,7 @@ public class Chatbot
 	}
 
 	/**
-	 * 
+	 * a geetter for the topics
 	 * @return
 	 */
 	public String[] getTopics()
@@ -489,7 +513,7 @@ public class Chatbot
 	}
 
 	/**
-	 * 
+	 * a getter for the followups
 	 * @return
 	 */
 	public String[] getFollowUps()
@@ -498,7 +522,7 @@ public class Chatbot
 	}
 
 	/**
-	 * 
+	 * a getter for the username
 	 * @return
 	 */
 	public String getUsername()
@@ -507,7 +531,7 @@ public class Chatbot
 	}
 	
 	/**
-	 * 
+	 * a getter for the content
 	 * @return
 	 */
 	public String getContent()
@@ -516,7 +540,7 @@ public class Chatbot
 	}
 
 	/**
-	 * 
+	 * a getter for the Intro
 	 * @return
 	 */
 	public String getIntro()
@@ -525,7 +549,7 @@ public class Chatbot
 	}
 	
 	/**
-	 * 
+	 * a getter for the current time
 	 * @return
 	 */
 	public LocalTime getCurrentTime()
@@ -534,7 +558,7 @@ public class Chatbot
 	}
 	
 	/**
-	 * 
+	 * sets the user name
 	 * @param username
 	 */
 	public void setUsername(String username)
@@ -543,7 +567,7 @@ public class Chatbot
 	}
 	
 	/**
-	 * 
+	 * sets the content
 	 * @param content
 	 */
 	public void setContent(String content)
