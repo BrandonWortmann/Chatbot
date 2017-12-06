@@ -12,6 +12,10 @@ public class ChatFrame extends JFrame
 	private ChatbotController appController;
 	private ChatPanel appPane;
 	
+	/**
+	 * this is the constructor for the JFrame
+	 * @param appController
+	 */
 	public ChatFrame(ChatbotController appController)
 	{
 		super();

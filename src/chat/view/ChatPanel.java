@@ -31,7 +31,11 @@ public class ChatPanel extends JPanel
 	private JLabel infoLabel;
 	private JLabel titleLabel;
 	private JScrollPane chatScrollPane;
-
+	
+	/**
+	 * this is the constructor for the panel
+	 * @param appController
+	 */
 	public ChatPanel(ChatbotController appController)
 	{
 		super();
@@ -55,7 +59,9 @@ public class ChatPanel extends JPanel
 		
 
 	}
-	
+	/**
+	 * sets up the scroll pane
+	 */
 	private void setupScrollPane()
 	{
 		chatScrollPane.setViewportView(chatArea);

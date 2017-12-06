@@ -17,6 +17,9 @@ public class ChatbotController
 	private PopupDisplay display;
 	private ChatFrame appFrame;
 
+	/** 
+	 * this is the constructor for the controller
+	 */
 	public ChatbotController()
 	{
 		chatbot = new Chatbot("Brandon Wortmann");
@@ -24,12 +27,20 @@ public class ChatbotController
 		appFrame = new ChatFrame(this);
 	}
 
+	/**
+	 * this starts the class
+	 */
 	public void start()
 	{
 		display.displayText("Welcome to Chatbot");
 
 	}
 
+	/**
+	 * this tells the gui what to output
+	 * @param input
+	 * @return
+	 */
 	public String interactWithChatbot(String input)
 	{
 		String chatbotSays = "";
@@ -44,6 +55,9 @@ public class ChatbotController
 		return chatbotSays;
 	}
 
+	/**
+	 * this closes the program
+	 */
 	private void close()
 	{
 		display.displayText("Goodbye");
@@ -51,21 +65,38 @@ public class ChatbotController
 
 	}
 
+	/** 
+	 * this returns the chatbot
+	 * @return
+	 */
 	public Chatbot getChatbot()
 	{
 		return chatbot;
 	}
 
+	/** 
+	 * this returns the display
+	 * @return
+	 */
 	public PopupDisplay getDisplay()
 	{
 		return display;
 	}
 
+	/**
+	 * this returns the frame
+	 * @return
+	 */
 	public ChatFrame getChatFrame()
 	{
 		return appFrame;
 	}
 
+	/** 
+	 * this is used for all of the checkers
+	 * @param text
+	 * @return
+	 */
 	public String useCheckers(String text)
 	{
 		String response = "";
