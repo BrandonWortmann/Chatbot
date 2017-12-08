@@ -48,6 +48,7 @@ public class Chatbot
 		buildTopics();
 		buildCuteAnimals();
 		buildMovieList();
+		buildFollowUps();
 	}
 	
 	
@@ -143,6 +144,14 @@ public class Chatbot
 		questions[8] = "Where is your favorite place to visit?";
 		questions[9] = "What is your job?";
 				
+	}
+	private void buildFollowUps()
+	{
+		followUps[1] = "food is good";
+		followUps[2] = "I like food";
+		followUps[3] = "I am hungry";
+		followUps[4] = "I want food";
+		followUps[0] = "food is good";
 	}
 	
 	/**
