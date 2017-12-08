@@ -105,6 +105,14 @@ public class Chatbot
 		shoppingList.add("salsa");
 		shoppingList.add("milk");
 		shoppingList.add("bread");
+		shoppingList.add("eggs");
+		shoppingList.add("hot peppers");
+		shoppingList.add("onions");
+		shoppingList.add("bagel");
+		shoppingList.add("crunchy peanut butter");
+		shoppingList.add("hot sauce");
+		shoppingList.add("juice");
+			
 		
 	}
 	
