@@ -140,7 +140,7 @@ public class ChatbotController
 		return response;
 	}
 	
-	public void handleError(Exception error)
+	public void handleErrors(Exception error)
 	{
 		display.displayText(error.getMessage());
 	}
