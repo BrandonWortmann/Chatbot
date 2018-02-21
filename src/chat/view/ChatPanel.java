@@ -45,8 +45,8 @@ public class ChatPanel extends JPanel
 		chatButton = new JButton("Chat");
 		searchButton = new JButton("search" , new ImageIcon(getClass().getResource("/chat/view/images/searchImage.png")));
 		loadButton = new JButton("load" , new ImageIcon(getClass().getResource("/chat/view/images/loadImage.png")));
-		saveButton = new JButton("save" , new ImageIcon(getClass().getResource("chat/view/images/saveImage.png")));
-		tweetButton = new JButton("tweet" , new ImageIcon(getClass().getResource("/chat/vew/images/tweetImage.png")));
+		saveButton = new JButton("save" , new ImageIcon(getClass().getResource("/chat/view/images/saveImage.png")));
+		tweetButton = new JButton("tweet" , new ImageIcon(getClass().getResource("/chat/view/images/tweetImage.png")));
 		
 		chatArea = new JTextArea(10, 25);
 		inputField = new JTextField(20);
@@ -168,6 +168,43 @@ public class ChatPanel extends JPanel
 
 			}
 		});
+		
+		saveButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				
+
+			}
+		});
+		
+		loadButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				
+
+			}
+		});
+		
+		searchButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				
+
+			}
+		});
+		
+		tweetButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				
+
+			}
+		});
+		
 
 	}
 	
