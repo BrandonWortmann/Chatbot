@@ -1,18 +1,14 @@
 package chat.view;
 
-import javax.swing.JPanel;
+
 import chat.controller.ChatbotController;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.JTextArea;
-import javax.swing.SpringLayout;
+
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JToggleButton;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
-import javax.swing.JScrollPane;
+
+import javax.swing.*;
 
 /**
  * sets up the JPanel
@@ -24,6 +20,10 @@ public class ChatPanel extends JPanel
 {
 	private ChatbotController appController;
 	private JButton chatButton;
+	private JButton searchButton;
+	private JButton saveButton;
+	private JButton loadButton;
+	private JButton tweetButton;
 	private JTextField inputField;
 	private JTextArea chatArea;
 	private SpringLayout appLayout;
@@ -43,6 +43,11 @@ public class ChatPanel extends JPanel
 
 		checkerButton = new JButton("Test");
 		chatButton = new JButton("Chat");
+		searchButton = new JButton("search" , new ImageIcon(getClass().getResource("/chat/view/images/searchImage.png")));
+		loadButton = new JButton("load" , new ImageIcon(getClass().getResource("/chat/view/images/loadImage.png")));
+		saveButton = new JButton("save" , new ImageIcon(getClass().getResource("chat/view/images/saveImage.png")));
+		tweetButton = new JButton("tweet" , new ImageIcon(getClass().getResource("/chat/vew/images/tweetImage.png")));
+		
 		chatArea = new JTextArea(10, 25);
 		inputField = new JTextField(20);
 		infoLabel = new JLabel("Type to chat with the chatbot");
@@ -90,6 +95,11 @@ public class ChatPanel extends JPanel
 		
 		chatArea.setEnabled(false);
 		chatArea.setEditable(false);
+		
+		this.add(loadButton);
+		this.add(saveButton);
+		this.add(tweetButton);
+		this.add(searchButton);
 
 	}
 
