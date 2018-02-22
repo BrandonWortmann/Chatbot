@@ -138,6 +138,7 @@ public class ChatPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.WEST, inputField, 25, SpringLayout.WEST, this);
 		appLayout.putConstraint(SpringLayout.EAST, chatScrollPane, -25, SpringLayout.EAST, this);
 		appLayout.putConstraint(SpringLayout.NORTH, infoLabel, 10, SpringLayout.SOUTH, chatScrollPane);
+		appLayout.putConstraint(SpringLayout.SOUTH, chatScrollPane, -200, SpringLayout.SOUTH, this);
 	}
 
 	/**
