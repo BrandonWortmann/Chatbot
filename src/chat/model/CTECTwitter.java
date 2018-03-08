@@ -14,6 +14,7 @@ import twitter4j.ResponseList;
 import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.text.DecimalFormat;
 
 public class CTECTwitter
@@ -23,6 +24,7 @@ public class CTECTwitter
 	private List<Status> searchedTweets;
 	private List<String> tweetedWords;
 	private long totalWordCount;
+	private HashMap<String, Integer> wordsAndCount;
 	
 	public CTECTwitter(ChatbotController appController)
 	{
@@ -31,6 +33,7 @@ public class CTECTwitter
 		this.searchedTweets = new ArrayList<Status>();
 		this.tweetedWords = new ArrayList<String>();
 		this.totalWordCount = 0;
+		this.wordsAndCount = new HashMap<String, Integer>();
 	}
 	
 	public void sendTweet(String textToTweet)
@@ -98,6 +101,7 @@ public class CTECTwitter
 		for (Status currentStatus : searchedTweets)
 		{
 			String tweetText = currentStatus.getText();
+			tweetText = tweetText.replace("\n", " ");
 			String[] tweetWords = tweetText.split(" ");
 			for (int i = 0; i < tweetWords.length; i++)
 			{
@@ -154,6 +158,33 @@ public class CTECTwitter
 					removeIndex = boringWords.length;
 					
 				}
+			}
+		}
+	}
+	
+	private void removeBlanks()
+	{
+		
+		for(int index = tweetedWords.size()-1; index>=0; index--)
+		{
+			if(tweetedWords.get(index).trim().length() == 0)
+			{
+				tweetedWords.remove(index);
+			}
+		}
+	}
+	
+	private void generateWordCount()
+	{
+		for(String word : tweetedWords)
+		{
+			if(!wordsAndCount.containsKey(word.toLowerCase()))
+			{
+				wordsAndCount.put(word.toLowerCase(), 1);
+			}
+			else
+			{
+				wordsAndCount.replace(word.toLowerCase(), wordsAndCount.get(word.toLowerCase()) + 1);
 			}
 		}
 	}
