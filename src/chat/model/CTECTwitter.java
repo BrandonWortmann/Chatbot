@@ -165,7 +165,7 @@ public class CTECTwitter
 		{
 			for (int removeIndex = 0; removeIndex < boringWords.length; removeIndex++)
 			{
-				if (tweetedWords.get(index).equals(boringWords[removeIndex]))
+				if (tweetedWords.get(index).equalsIgnoreCase(boringWords[removeIndex]))
 				{
 					tweetedWords.remove(index);
 					removeIndex = boringWords.length;
