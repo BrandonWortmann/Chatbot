@@ -247,27 +247,40 @@ public class CTECTwitter
 		return entries;
 	}
 	
-	public String analyzeTwitteerForTopic(String topic)
+	public String analyzeTwitterForTopic(String topic)
 	{
 		String results = "";
 		searchedTweets.clear();
 		Query twitterQuery = new Query(topic);
 		int resultMax = 750;
-		long lastID = Long.MAX_VALUE;
+		long lastId = Long.MAX_VALUE;
 		twitterQuery.setGeoCode(new GeoLocation(40.7128, 74.0060), 200, Query.MILES);
+		twitterQuery.setLang("English");
+		twitterQuery.setSince("2017-09-27");
 		ArrayList<Status> matchingTweets = new ArrayList<Status>();
 		while(searchedTweets.size() < resultMax)
 		{
 			try
 			{
 				QueryResult resultingTweets = chatbotTwitter.search(twitterQuery);
+				
+				for(Status  currentTweet : resultingTweets.getTweets())
+				{
+					if(currentTweet.getId() < lastId)
+					{
+						matchingTweets.add(currentTweet);
+						lastId = currentTweet.getId();
+					}
+				}
+				
 			}
 			catch(TwitterException error)
 			{
+				System.out.println(searchedTweets.size());
 				appController.handleErrors(error);
 			}
 			
-			twitterQuery.setMaxId(lastID - 1);
+			twitterQuery.setMaxId(lastId - 1);
 		}
 		
 		results += "Talk about the search results";
